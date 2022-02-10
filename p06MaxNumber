@@ -1,0 +1,25 @@
+package WhileLoop.lab;
+
+import java.util.Scanner;
+
+public class p06MaxNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String number =scanner.nextLine();
+
+        int maxNum = Integer.MIN_VALUE;
+        while(!number.equals("Stop")){
+            int num = Integer.parseInt(number);
+
+            if (num > maxNum){
+                maxNum = num;
+            }
+
+            number = scanner.nextLine();
+            }
+
+            System.out.println(maxNum);
+
+    }
+}
