@@ -1,0 +1,16 @@
+package WhileLoop.lab;
+
+import java.util.Scanner;
+
+public class p04Sequence2k1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int number = Integer.parseInt(scanner.nextLine());
+        int allNum = 1;
+        while (allNum<=number){
+            System.out.println(allNum);
+            allNum = allNum * 2 + 1;
+        }
+    }
+}
