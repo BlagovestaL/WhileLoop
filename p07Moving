@@ -1,0 +1,33 @@
+package WhileLoop.exe;
+
+import java.util.Scanner;
+
+public class p07Moving {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int widthFreeSpace = Integer.parseInt(scanner.nextLine());
+        int lengthFreeSpace = Integer.parseInt(scanner.nextLine());
+        int heightFreeSpace = Integer.parseInt(scanner.nextLine());
+
+        int volume = widthFreeSpace * lengthFreeSpace * heightFreeSpace;
+
+
+        while (true) {
+            String input = scanner.nextLine();
+            if (input.equals("Done")) {
+                System.out.println(volume + " Cubic meters left.");
+                break;
+            } else {
+                int box = Integer.parseInt(input);
+                volume -= box;
+                if (volume < 0) {
+                    System.out.printf(
+                            "No more free space! You need %d Cubic meters more.",
+                            Math.abs(volume));
+                    break;
+                }
+            }
+        }
+    }
+}
