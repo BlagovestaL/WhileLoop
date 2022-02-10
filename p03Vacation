@@ -1,0 +1,46 @@
+package WhileLoop.exe;
+
+import java.util.Scanner;
+
+public class p03Vacation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double needMoney = Double.parseDouble(scanner.nextLine());
+        double currentMoney = Double.parseDouble(scanner.nextLine());
+
+        int spendDays = 0;
+        int allDays = 0;
+
+        while (currentMoney<needMoney){
+            String action = scanner.nextLine();
+            double sum = Double.parseDouble(scanner.nextLine());
+
+            allDays++;
+
+            switch (action){
+                case "spend":
+                    spendDays++;
+                    currentMoney = currentMoney-sum;
+                    if (currentMoney<0){
+                        currentMoney=0;
+                    }
+                    break;
+                case "save":
+                    currentMoney = currentMoney+sum;
+                    spendDays = 0;
+                    break;
+            }
+            if (spendDays == 5){
+                break;
+            }
+        }
+            if(currentMoney>= needMoney){
+                System.out.printf("You saved the money for %d days.", allDays);
+            }else {
+                System.out.println("You can't save the money.\n" +
+                        allDays);
+            }
+
+    }
+}
